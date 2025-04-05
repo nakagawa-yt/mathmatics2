@@ -1,0 +1,538 @@
+@charset 'UTF-8';
+
+/*
+COLORS
+================================================ */
+:root {
+    --light-blue: #97d9ff;
+    --blue: #1665cc;
+    --purple: #b473bf;
+    --pink: #ffb2c1;
+    --orange: #f2eafc;
+    --light-grey:#ceecceea;
+    --yellow: #f5f2ab;
+    --light-green: #ccf7c7;
+    --green: #00a2af;
+    --grey: #333;
+    --pgray:#6e5064;
+    --brown: #af6946;
+    --white: #fff;
+    --base:#929DC8;
+    --text:#F6F7FB;
+    --accent:#485796;
+    --accents:#94cfa5;
+}
+
+/*
+GENERAL STYLING
+================================================ */
+html {
+    font-size: 100%;
+    /* スムーズスクロール */
+    scroll-behavior: smooth;
+}
+body {
+	color: var(--grey);
+	font-family: sans-serif;
+}
+
+/*
+COMMON
+================================================ */
+p {
+    line-height: 1.5;
+    font-size: 28px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+img {
+    max-width: 100%;
+}
+h2 {
+    font-size: 66px;
+    margin-bottom: 2rem;
+}
+h1,
+h2 {
+    text-align: center;
+}
+header{
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+h1,
+h2,
+.title-inf {
+    font-family: impact, sans-serif;
+}
+
+/* Layout */
+.wrapper {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+a:hover,
+    .ticket-btn:hover {
+        transition: .3s;
+    }
+
+a:hover,
+    .ticket-btn:hover {
+        transition: .3s;
+    }
+
+/*
+HEADER
+================================================ */
+header {
+    background: var(--accent);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 1rem;
+}
+header a {
+    color: var(--text);
+    font-size: 22px;
+    font-weight: bold;
+    border-left: 2px solid var(--text);
+}
+.btn-menu {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: var(--text);
+    padding: .5rem 0rem;
+    font-weight: bold;
+}
+header a:hover {
+    color: var(--yellow);
+    font-weight: bold;
+}
+.main-nav {
+    background: var(--accent);
+    z-index: 2;
+    top: 50px;
+    padding: 1rem 0;
+    overflow: hidden;
+    transition: .5s;
+    width: 100%;
+    position: static;
+    display: flex;
+    justify-content: space-around;
+}
+.main-nav li {
+    text-align: center;
+    list-style: none;
+    width:20%;
+    margin: 0 0 0 0;
+}
+.main-nav a {
+    display: block;
+    text-decoration: none;
+}
+.main-nav.open-menu {
+    width: 100%;
+}
+
+/*
+title
+================================================ */
+#title {
+    /* ↓ 省略形だとブラウザーによってうまく表示されない
+    background: var(--light-blue) url('../images/hero.jpg') no-repeat center / cover; */
+    background-color: rgba(255,255,255,.7);
+    background-image: url('../images/background1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+@keyframes bg-color {
+    0% { background-color: var(--light-blue); }
+    12.5% { background-color: var(--blue); }
+    25% { background-color: var(--purple); }
+    37.5% { background-color: var(--pink); }
+    50% { background-color: var(--orange); }
+    62.5% { background-color: var(--yellow); }
+    75% { background-color: var(--light-green); }
+    87.5% { background-color: var(--green); }
+    100% { background-color: var(--light-blue); }
+}
+#title h2 {
+    color:var(--grey);
+    border-top: 5px dotted var(--grey);
+    border-bottom: 5px dotted var(--grey);
+    padding: .5rem 0;
+    font-size: 80px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+.title-inf {
+    color:var(--grey);
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+}
+.title-inf:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -150px;/*線の上下位置*/
+    display: inline-block;
+    width: 60%;/*線の長さ*/
+    height: 140px;/*線の太さ*/
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);/*位置調整*/
+    background-color: rgb(245, 242, 171,.8);/*線の色*/
+    border-radius: 15px;/*線の丸み*/
+    z-index: -1;
+  }
+
+.inf-list {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: -2rem;
+}
+.inf-list img {
+    margin-right: 1.5rem;
+    width: 15%;
+    height: 15%;
+}
+.wrapper p{
+    font-size: 28px;
+    text-align: center;
+    padding: 2vw 10vw;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/*
+演習
+================================================ */
+#training {
+    padding: 8rem 1rem 1rem 6rem;
+    margin-top: -6rem;
+}
+#training .wrappern{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-bottom: 12vh;
+}
+#training h2{
+    background-color: var(--base);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.tr-table {
+    color: var(--base);
+    width: 100%;
+}
+
+.tr-table tr{
+    border-top: 3px solid var(--base);
+    border-bottom: 3px solid var(--base);
+}
+.tr-table td {
+    display: block;
+    line-height: 1.5;
+    color: var(--accent);
+}
+.tr-table a {
+    text-decoration: none;
+}
+
+.tr-content {
+    text-align: center;
+    font-size: 28px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding: 1rem 0;
+    &:hover {
+		cursor: pointer;
+		background-color: var(--light-green);
+	}
+}
+
+/*スライド================================================ */
+#slide {
+    padding: 8rem 1rem 1rem 6rem;
+    margin-top:2vh;
+    background: linear-gradient( var(--base), var(--base));
+    -webkit-clip-path: polygon(0px 0, 100% 10%, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+
+}
+#slide .wrappern{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-bottom: 20vh;
+}
+
+#slide h2 {
+  background-color: var(--text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 5vh;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700; 
+  font-style: normal;
+  margin-bottom: .5rem;
+}
+.slide-table {
+    color: var(--text);
+    width: 100%;
+}
+.slide-table tr {
+    border-top: 3px solid var(--text);
+    border-bottom: 3px solid var(--text);
+}
+.slide-table td {
+    display: block;
+    line-height: 1.5;
+}
+.slide-content {
+    text-align: center;
+    font-size: 28px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding: 1rem 0;
+    &:hover {
+		cursor: pointer;
+		background-color: var(--accents);
+	}
+}
+.slide-content a {
+    text-decoration: none;
+}
+/*
+PrintS
+================================================ */
+#prints {
+    margin-bottom: 8vh;
+    padding-top: 12vh;
+    margin-top:-10h;
+}
+#prints h2{
+    font-weight: bold;
+    background-color: var(--base);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+#prints .wrappern{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-bottom: 12vh;
+}
+.detailp {
+	border-top: 2px solid var(--accent);
+	&:last-of-type {
+		border-bottom: 2px solid var(--accent);
+	} 
+}
+.detailp-summary {
+	position: relative;
+	display: block;
+	padding: 20px;
+	color: var(--base);
+	font-size: 28px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+	text-align: center;
+	&:hover {
+		cursor: pointer;
+		background-color: var(--light-green);
+	}
+	.btn {
+		position: absolute;
+        top: 37%;
+        left: 10%;
+        width: 18px;
+        height: 18px;
+        transform-origin: center center;
+        transition-duration: 0.2s;
+
+        &:before,
+        &:after {
+            content: "";
+            background-color: var(--base);
+            border-radius: 10px;
+            width: 18px;
+            height: 4px;
+            position: absolute;
+            top: 7px;
+            left: 0;
+            transform-origin: center center;
+        }
+        &:before {
+            width: 4px;
+            height: 18px;
+            top: 0;
+            left: 7px;
+        }
+    }
+	&.is-active {
+		.btn {
+			-webkit-transform: rotate(-180deg);
+			transform: rotate(-180deg);
+            padding-right: -4rem;
+			&:before {
+            	content: none;
+        	}	
+		}
+    }
+}
+
+.detailp-summary::-webkit-details-marker {
+	display: none;
+}
+.detailp-content {
+	p {
+		margin: 0 30px 10px 30px;
+		color: var(--base);
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+		text-align: left;
+		&:last-of-type {
+			margin: 0 0 2rem 1.8rem;
+		}
+	}
+    p-content-t {
+        text-align: center;
+        padding: 2rem 2rem 0 2rem;
+        top: 9px;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        font-style: normal;
+    }
+    .p-content {
+        table-layout: fixed;
+        width: 430px;
+        font-size: 20px;
+        padding: 1rem 2rem;
+        background-color: var(--orange);
+        top: 5px;
+        border-radius: 10px;
+    }
+}
+.detailp-content {
+    td {
+        font-size: 36px;
+        &:last-of-type {
+            border-left: 2px dotted var(--accent);
+        }
+    }
+}
+
+.p-content2 {
+    table-layout: fixed;
+    padding: 0.5rem 0 ;
+    border-bottom: 2px dotted var(--accent);
+}
+
+/*
+sites
+================================================ */
+#sites {
+    padding: 6rem 1rem 1rem 6rem;
+    background: linear-gradient( var(--base), var(--base));
+    -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+}
+#sites h2 {
+    color: var(--text);
+    margin-top: 4vh;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.ticket-form {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+.ticket-btn {
+    background: var(--text);
+    color: var(--base);
+    display: block;
+    font-size: 24px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    border-radius: 30px;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+#sites span{
+    margin: auto;
+    font-size: 18px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+/*
+FOOTER
+================================================ */
+.footer {
+    border-top: 2px solid rgba(255,255,255,0.7);
+    padding-top: 2rem;
+    text-align: center;
+    font-size: .875rem;
+    color: var(--text);
+}
+.footer a {
+    text-decoration: underline;
+}
+
+/*
+DESKTOP SIZE
+================================================ */
+@media screen and (max-width: 480px) {
+    header {
+        color:#af6946;
+    }
+}
