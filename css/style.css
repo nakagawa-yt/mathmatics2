@@ -527,4 +527,11 @@ FOOTER
 .footer a {
     text-decoration: underline;
 }
-
+/*
+DESKTOP SIZE
+================================================ */
+@media screen and (max-width: 480px) {
+    html {
+        display:none;
+    }
+}
