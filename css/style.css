@@ -528,11 +528,3 @@ FOOTER
     text-decoration: underline;
 }
 
-/*
-DESKTOP SIZE
-================================================ */
-@media screen and (max-width: 480px) {
-    header {
-        color:#af6946;
-    }
-}
