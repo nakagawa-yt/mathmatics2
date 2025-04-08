@@ -156,7 +156,7 @@ title
     background-position: center;
     background-size: cover;
     background-blend-mode: screen;
-    height: 85vh;
+    height: 95vh;
     display: flex;
     align-items: center;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -178,6 +178,7 @@ title
     border-top: 5px dotted var(--grey);
     border-bottom: 5px dotted var(--grey);
     padding: .5rem 0;
+    margin-top: 1rem;
     font-size: 80px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 800;
