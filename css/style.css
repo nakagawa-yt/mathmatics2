@@ -156,7 +156,7 @@ title
     background-position: center;
     background-size: cover;
     background-blend-mode: screen;
-    height: 95vh;
+    height:100vh;
     display: flex;
     align-items: center;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
